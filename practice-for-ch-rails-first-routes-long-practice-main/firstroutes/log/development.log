@@ -69,3 +69,47 @@ Processing by Rails::WelcomeController#index as */*
 Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 246)
 
 
+Started GET "/users?fav_food=pizza" for ::1 at 2022-12-14 15:08:28 -0500
+Processing by UsersController#index as */*
+  Parameters: {"fav_food"=>"pizza"}
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 1394)
+
+
+Started POST "/users" for ::1 at 2022-12-14 15:11:30 -0500
+
+AbstractController::ActionNotFound - The action 'create' could not be found for UsersController:
+
+Started POST "/users" for ::1 at 2022-12-14 15:12:20 -0500
+Processing by UsersController#create as */*
+  Parameters: {"fav_food"=>"pizza", "gross_food"=>"salad"}
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 264)
+
+
+Started POST "/users" for ::1 at 2022-12-14 15:38:46 -0500
+Processing by UsersController#create as */*
+  Parameters: {"events"=>"wedding", "wedding"=>"date ", "text/plain"=>["time "], "date"=>"12/15/22", "time"=>"7:00PM"}
+Completed 200 OK in 3ms (Views: 1.7ms | Allocations: 153)
+
+
+Started POST "/users" for ::1 at 2022-12-14 15:42:23 -0500
+Processing by UsersController#create as */*
+  Parameters: {"event"=>{"'name'"=>"Wedding", "'date'"=>"12/15/22", "'time'"=>"7:00PM"}}
+Completed 200 OK in 1ms (Views: 0.3ms | Allocations: 133)
+
+
+Started GET "/users" for ::1 at 2022-12-14 15:46:48 -0500
+Processing by UsersController#index as */*
+  Parameters: {"event"=>{"'name'"=>"Wedding", "'date'"=>"12/15/22", "'time'"=>"7:00PM"}}
+  Rendering text template
+  Rendered text template (Duration: 0.1ms | Allocations: 8)
+Completed 200 OK in 7ms (Views: 7.0ms | Allocations: 380)
+
+
+Started POST "/users" for ::1 at 2022-12-14 15:47:09 -0500
+Processing by UsersController#create as */*
+  Parameters: {"event"=>{"'name'"=>"Wedding", "'date'"=>"12/15/22", "'time'"=>"7:00PM"}}
+Completed 200 OK in 0ms (Views: 0.3ms | Allocations: 166)
+
+
