@@ -349,3 +349,256 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.8ms | Allocations: 1209)
 
 
+Started GET "/users?users[id]=1" for ::1 at 2022-12-14 16:47:37 -0500
+  [1m[35m (37.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+
+ActiveRecord::PendingMigrationError - Migrations are pending. To resolve this issue, run:
+        bin/rails db:migrate RAILS_ENV=development
+You have 1 pending migration:
+20221214210411_create_users.rb:
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8371906203672976965)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20221214210411)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying NOT NULL, "email" character varying NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (3.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221214210411"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-12-14 21:48:24.705207"], ["updated_at", "2022-12-14 21:48:24.705207"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8371906203672976965)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Tim"], ["email", "tim@gmail.com"], ["created_at", "2022-12-14 21:48:58.882995"], ["updated_at", "2022-12-14 21:48:58.882995"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Stiven"], ["email", "stiven@gmail.com"], ["created_at", "2022-12-14 21:49:16.937344"], ["updated_at", "2022-12-14 21:49:16.937344"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Brandon"], ["email", "brandon@gmail.com"], ["created_at", "2022-12-14 21:49:35.144160"], ["updated_at", "2022-12-14 21:49:35.144160"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/users?users[id]=1" for ::1 at 2022-12-14 16:49:53 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+  Parameters: {"event"=>{"'name'"=>"Wedding", "'date'"=>"12/15/22", "'time'"=>"7:00PM"}, "users"=>{"id"=>"1"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 14ms (Views: 8.5ms | ActiveRecord: 3.8ms | Allocations: 6296)
+
+
+Started GET "/users?users[:id]=1" for ::1 at 2022-12-14 16:50:05 -0500
+Processing by UsersController#index as */*
+  Parameters: {"event"=>{"'name'"=>"Wedding", "'date'"=>"12/15/22", "'time'"=>"7:00PM"}, "users"=>{":id"=>"1"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.7ms | Allocations: 1062)
+
+
+Started GET "/users?id=1" for ::1 at 2022-12-14 16:50:14 -0500
+Processing by UsersController#index as */*
+  Parameters: {"event"=>{"'name'"=>"Wedding", "'date'"=>"12/15/22", "'time'"=>"7:00PM"}, "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.5ms | Allocations: 973)
+
+
+Started GET "/users?id=1" for ::1 at 2022-12-14 16:50:15 -0500
+Processing by UsersController#index as */*
+  Parameters: {"event"=>{"'name'"=>"Wedding", "'date'"=>"12/15/22", "'time'"=>"7:00PM"}, "id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.6ms | Allocations: 973)
+
+
+Started GET "/users?[id]=1" for ::1 at 2022-12-14 16:50:22 -0500
+Processing by UsersController#index as */*
+  Parameters: {"event"=>{"'name'"=>"Wedding", "'date'"=>"12/15/22", "'time'"=>"7:00PM"}, "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.2ms | Allocations: 973)
+
+
+Started GET "/users/:id?1" for ::1 at 2022-12-14 16:50:55 -0500
+Processing by UsersController#show as */*
+  Parameters: {"event"=>{"'name'"=>"Wedding", "'date'"=>"12/15/22", "'time'"=>"7:00PM"}, "1"=>nil, "id"=>":id"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `show'
+Completed 404 Not Found in 8ms (ActiveRecord: 0.3ms | Allocations: 4045)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find User with 'id'=:id:
+  app/controllers/users_controller.rb:21:in `show'
+
+Started GET "/users/:id?users[id]=1" for ::1 at 2022-12-14 16:51:07 -0500
+Processing by UsersController#show as */*
+  Parameters: {"event"=>{"'name'"=>"Wedding", "'date'"=>"12/15/22", "'time'"=>"7:00PM"}, "users"=>{"id"=>"1"}, "id"=>":id"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `show'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.6ms | Allocations: 1039)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find User with 'id'=:id:
+  app/controllers/users_controller.rb:21:in `show'
+
+Started GET "/users/:id?users[1]" for ::1 at 2022-12-14 16:51:16 -0500
+Processing by UsersController#show as */*
+  Parameters: {"event"=>{"'name'"=>"Wedding", "'date'"=>"12/15/22", "'time'"=>"7:00PM"}, "users"=>{"1"=>nil}, "id"=>":id"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `show'
+Completed 404 Not Found in 4ms (ActiveRecord: 1.6ms | Allocations: 1032)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find User with 'id'=:id:
+  app/controllers/users_controller.rb:21:in `show'
+
+Started GET "/users/:id?users[1]" for ::1 at 2022-12-14 16:51:18 -0500
+Processing by UsersController#show as */*
+  Parameters: {"event"=>{"'name'"=>"Wedding", "'date'"=>"12/15/22", "'time'"=>"7:00PM"}, "users"=>{"1"=>nil}, "id"=>":id"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `show'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.6ms | Allocations: 1032)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find User with 'id'=:id:
+  app/controllers/users_controller.rb:21:in `show'
+
+Started GET "/users/:id?users[:id]=1" for ::1 at 2022-12-14 16:51:44 -0500
+Processing by UsersController#show as */*
+  Parameters: {"event"=>{"'name'"=>"Wedding", "'date'"=>"12/15/22", "'time'"=>"7:00PM"}, "users"=>{":id"=>"1"}, "id"=>":id"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `show'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms | Allocations: 1031)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find User with 'id'=:id:
+  app/controllers/users_controller.rb:21:in `show'
+
+Started GET "/users" for ::1 at 2022-12-14 17:01:33 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+  Parameters: {"event"=>{"'name'"=>"Wedding", "'date'"=>"12/15/22", "'time'"=>"7:00PM"}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 21ms (Views: 12.2ms | ActiveRecord: 5.9ms | Allocations: 6296)
+
+
+Started GET "/users?users" for ::1 at 2022-12-14 17:01:45 -0500
+Processing by UsersController#index as */*
+  Parameters: {"event"=>{"'name'"=>"Wedding", "'date'"=>"12/15/22", "'time'"=>"7:00PM"}, "users"=>nil}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.5ms | Allocations: 1062)
+
+
+Started GET "/users" for ::1 at 2022-12-14 17:03:26 -0500
+Processing by UsersController#index as */*
+  Parameters: {"event"=>{"'name'"=>"Wedding", "'date'"=>"12/15/22", "'time'"=>"7:00PM"}}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 250)
+
+
+Started GET "/users" for ::1 at 2022-12-14 17:04:23 -0500
+Processing by UsersController#index as */*
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 103)
+
+
+Started GET "/users?id=1" for ::1 at 2022-12-14 17:06:56 -0500
+Processing by UsersController#index as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 13ms (Views: 5.1ms | ActiveRecord: 5.6ms | Allocations: 3437)
+
+
+Started GET "/users/1" for ::1 at 2022-12-14 17:11:20 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `show'
+Completed 200 OK in 19ms (Views: 0.8ms | ActiveRecord: 5.2ms | Allocations: 8943)
+
+
+Started GET "/users/2" for ::1 at 2022-12-14 17:12:03 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `show'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 725)
+
+
+Started PATCH "/users/1" for ::1 at 2022-12-14 17:20:09 -0500
+Processing by UsersController#update as */*
+  Parameters: {"user"=>{"name"=>"Kin", "email"=>"kin@gmail.com"}, "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:27:in `update'
+  [1m[36mUser Update (8.3ms)[0m  [1m[33mUPDATE "users" SET "name" = $1, "email" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["name", "Kin"], ["email", "kin@gmail.com"], ["updated_at", "2022-12-14 22:20:09.899251"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:27:in `update'
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:27:in `update'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 51ms (ActiveRecord: 23.0ms | Allocations: 7223)
+
+
+Started GET "/users/1" for ::1 at 2022-12-14 17:20:09 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `show'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 677)
+
+
+Started PATCH "/users" for ::1 at 2022-12-14 17:20:18 -0500
+  
+ActionController::RoutingError (No route matches [PATCH] "/users"):
+  
+Started PATCH "/users" for ::1 at 2022-12-14 17:20:23 -0500
+  
+ActionController::RoutingError (No route matches [PATCH] "/users"):
+  
+Started PATCH "/users/" for ::1 at 2022-12-14 17:20:27 -0500
+  
+ActionController::RoutingError (No route matches [PATCH] "/users"):
+  
+Started GET "/users/" for ::1 at 2022-12-14 17:20:41 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.8ms | Allocations: 1156)
+
+
+Started GET "/users/" for ::1 at 2022-12-14 17:22:19 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 16ms (Views: 6.1ms | ActiveRecord: 7.8ms | Allocations: 3586)
+
+
+Started PATCH "/users/" for ::1 at 2022-12-14 17:22:26 -0500
+  
+ActionController::RoutingError (No route matches [PATCH] "/users"):
+  
+Started PATCH "/users/2" for ::1 at 2022-12-14 17:22:47 -0500
+Processing by UsersController#update as */*
+  Parameters: {"user"=>{"name"=>"Tim", "email"=>"kin@gmail.com"}, "id"=>"2"}
+Completed 500 Internal Server Error in 150822ms (ActiveRecord: 0.0ms | Allocations: 97317)
+
+
+
+SystemExit - exit:
+  (byebug):1:in `update'
+  app/controllers/users_controller.rb:27:in `update'
+
