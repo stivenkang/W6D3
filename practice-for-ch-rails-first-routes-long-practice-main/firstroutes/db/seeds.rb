@@ -6,11 +6,11 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-# User.create(username: "Stiven")
-# User.create(username: "Tim")
-# User.create(username: "Brandon")
-# User.create(username: "Dan")
-# User.create(username: "Shwilly")
+User.create(username: "Stiven")
+User.create(username: "Tim")
+User.create(username: "Brandon")
+User.create(username: "Dan")
+User.create(username: "Shwilly")
 
 Artwork.create(title: "Dog Photo", image_url: "dog.pic", artist_id: User.first.id)
 Artwork.create(title: "Cat Photo", image_url: "cat.pic", artist_id: User.second.id)
