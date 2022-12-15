@@ -19,7 +19,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_15_161236) do
     t.bigint "viewer_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["artwork_id"], name: "index_artwork_shares_on_artwork_id"
+    t.index ["artwork_id", "viewer_id"], name: "index_artwork_shares_on_artwork_id_and_viewer_id", unique: true
     t.index ["viewer_id"], name: "index_artwork_shares_on_viewer_id"
   end
 

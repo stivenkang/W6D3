@@ -11,10 +11,14 @@ class User < ApplicationRecord
     validates :username, presence: true
 
     has_many :artworks,
-        foreign_key: :artist_id, 
-        inverse_of: :artist
+        primary_key: :id,
+        foreign_key: :artist_id,
+        class_name: :Artwork 
+        # inverse_of: :artist
 
-    has_many :artworks, 
-        foreign_key: :viewer_id, 
-        inverse_of: :viewer
+    has_many :artworks,
+        primary_key: :id, 
+        foreign_key: :viewr_id, 
+        class_name: :ArtworkShare
+        # inverse_of: :viewer
 end
